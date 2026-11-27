@@ -1,0 +1,6 @@
+@import "tailwindcss" source(none);
+@source "./page.html";
+
+@layer base {
+  button { cursor: pointer; }
+}

@@ -32,3 +32,9 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Tailwind build tooling
+node_modules/
+
+# Local Go build
+/hellooidc

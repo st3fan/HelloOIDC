@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello OIDC</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body class="min-h-dvh bg-stone-100 text-stone-900 antialiased">
+<div class="mx-auto flex min-h-dvh max-w-5xl flex-col px-6">
+  <header class="flex items-center justify-between border-b border-stone-200 py-7">
+    <a href="/" class="shrink-0 text-xl font-semibold tracking-tight">Hello OIDC</a>
+    {{if .}}
+    <form method="post" action="/logout" class="flex min-w-0 items-center gap-4 pl-4">
+      <span class="truncate text-sm text-stone-500">{{.}}</span>
+      <button class="shrink-0 whitespace-nowrap rounded-lg border border-stone-300 bg-white px-3.5 py-2 text-sm font-medium shadow-xs transition hover:bg-stone-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700">Log out</button>
+    </form>
+    {{end}}
+  </header>
+  <main class="flex flex-1 items-center justify-center py-12">
+    <div class="w-full max-w-md rounded-2xl border border-stone-200 bg-white p-7 shadow-sm sm:p-9">
+      {{if .}}
+      <h1 class="text-2xl font-semibold tracking-tight">Hello, world!</h1>
+      <p class="mt-2 text-sm leading-6 text-stone-500">You are signed in with SoloID.</p>
+      {{else}}
+      <h1 class="text-2xl font-semibold tracking-tight">Welcome</h1>
+      <p class="mt-2 text-sm leading-6 text-stone-500">Sign in to see your dashboard.</p>
+      <form action="/login" class="mt-7">
+        <button class="w-full rounded-lg bg-stone-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-stone-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700">Sign in with SoloID</button>
+      </form>
+      {{end}}
+    </div>
+  </main>
+</div>
+</body>
+</html>
